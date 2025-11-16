@@ -1,0 +1,479 @@
+.seminariste-form-container {
+  padding: 30px;
+  background: white;
+  border-radius: 20px;
+  margin: 25px 0;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.seminariste-form-container h2 {
+  color: var(--primary-green);
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.matricule-display {
+  text-align: center;
+  font-size: 14px;
+  color: #757575;
+  margin: 0 0 25px;
+  font-weight: 600;
+}
+
+/* Info card avec avatar */
+.info-card {
+  background: #F5F5F5;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+}
+
+.info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.info-card h3 {
+  color: var(--primary-green);
+  font-size: 18px;
+  margin: 0;
+}
+
+/* ✅ Avatar circulaire à droite */
+.profile-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--primary-green);
+  box-shadow: 0 4px 12px rgba(0, 105, 92, 0.3);
+  flex-shrink: 0;
+  background: white;
+}
+
+/* Avatar avec initiales */
+.avatar-initials {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--accent-yellow) 0%, #C0CA33 100%);
+  color: var(--text-dark);
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+/* Avatar avec photo */
+.avatar-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.info-item .label {
+  font-size: 13px;
+  color: #757575;
+  font-weight: 600;
+}
+
+.info-item .value {
+  font-size: 15px;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+/* Form actions */
+.form-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.btn-cancel-form {
+  flex: 1;
+  padding: 16px;
+  background: #757575;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-cancel-form:hover {
+  background: #616161;
+  transform: translateY(-2px);
+}
+
+.btn-submit {
+  flex: 2;
+  padding: 16px;
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-dark) 100%);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 105, 92, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-submit:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--primary-green-dark) 0%, #003D33 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 105, 92, 0.4);
+}
+
+.btn-submit:disabled {
+  background: #BDBDBD;
+  cursor: not-allowed;
+  opacity: 0.6;
+  box-shadow: none;
+}
+
+.success-message {
+  background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+  border: 2px solid #4CAF50;
+  color: #2E7D32;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2);
+  animation: slideDown 0.3s ease-out;
+}
+
+.error-message {
+  background: linear-gradient(135deg, #FFEBEE 0%, #FFCDD2 100%);
+  border: 2px solid #F44336;
+  color: #C62828;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .seminariste-form-container {
+    padding: 20px;
+    margin: 20px 0;
+  }
+
+  .seminariste-form-container h2 {
+    font-size: 20px;
+  }
+
+  .profile-avatar {
+    width: 50px;
+    height: 50px;
+  }
+
+  .avatar-initials {
+    font-size: 20px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .btn-cancel-form,
+  .btn-submit {
+    width: 100%;
+  }
+}
+/* Section photo */
+.photo-section {
+  background: #F5F5F5;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.photo-section h3 {
+  color: var(--primary-green);
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.photo-preview-large {
+  max-width: 300px;
+  margin: 0 auto 15px;
+}
+
+.photo-preview-large img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 3px solid var(--primary-green);
+  box-shadow: 0 4px 15px rgba(0, 105, 92, 0.2);
+}
+
+.btn-change-photo {
+  padding: 12px 24px;
+  background: var(--accent-yellow);
+  color: var(--text-dark);
+  border: none;
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-change-photo:hover {
+  background: #C0CA33;
+  transform: translateY(-2px);
+}
+
+/* Photo section validée */
+.photo-section.validated {
+  background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+  border: 2px solid #4CAF50;
+}
+
+.photo-section.validated h3 {
+  color: #2E7D32;
+}
+
+/* Bouton Scanner un autre QR */
+.btn-new-scan {
+  width: 100%;
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-dark) 100%);
+  padding: 18px;
+  font-size: 18px;
+}
+
+.btn-new-scan:hover {
+  background: linear-gradient(135deg, var(--primary-green-dark) 0%, #003D33 100%);
+}
+
+/* Animation pulse pour le bouton nouveau scan */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+.btn-new-scan {
+  animation: pulse 2s infinite;
+}
+
+.btn-new-scan:hover {
+  animation: none;
+}
+
+/* Message de succès plus visible */
+.success-message {
+  background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+  border: 3px solid #4CAF50;
+  color: #2E7D32;
+  padding: 25px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 18px;
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
+  animation: slideDown 0.5s ease-out;
+}
+
+/* Icône check animée */
+.success-message::before {
+  content: '✓';
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: #4CAF50;
+  color: white;
+  border-radius: 50%;
+  line-height: 40px;
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 15px;
+  animation: checkBounce 0.6s ease-out;
+}
+
+@keyframes checkBounce {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Photo section validée */
+.photo-section.validated {
+  background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+  border: 2px solid #4CAF50;
+}
+
+.photo-section.validated h3 {
+  color: #2E7D32;
+}
+
+/* Bouton Scanner un autre QR */
+.btn-new-scan {
+  width: 100%;
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-dark) 100%);
+  padding: 18px;
+  font-size: 18px;
+}
+
+.btn-new-scan:hover {
+  background: linear-gradient(135deg, var(--primary-green-dark) 0%, #003D33 100%);
+}
+
+/* Animation pulse pour le bouton */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+.btn-new-scan {
+  animation: pulse 2s infinite;
+}
+
+.btn-new-scan:hover {
+  animation: none;
+}
+
+/* Message de succès amélioré */
+.success-message {
+  background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+  border: 3px solid #4CAF50;
+  color: #2E7D32;
+  padding: 25px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 18px;
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
+  animation: slideDown 0.5s ease-out;
+}
+
+/* Icône check animée */
+.success-message::before {
+  content: '✓';
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: #4CAF50;
+  color: white;
+  border-radius: 50%;
+  line-height: 40px;
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 15px;
+  animation: checkBounce 0.6s ease-out;
+}
+
+@keyframes checkBounce {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.btn-new-scan {
+  background: #005eff;
+  color: white;
+  padding: 12px 18px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.btn-new-scan:hover {
+  background: #0046c7;
+}
+
+
+

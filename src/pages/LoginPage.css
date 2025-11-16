@@ -1,0 +1,250 @@
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #00695C 0%, #004D40 50%, #003D33 100%);
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.logo-login {
+  width: 100px;
+  height: 100px;
+  padding: 0px;
+  margin: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+/* Pattern islamique en arrière-plan */
+.login-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.03) 35px, rgba(255,255,255,.03) 70px),
+    repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(255,255,255,.03) 35px, rgba(255,255,255,.03) 70px);
+  opacity: 0.5;
+}
+
+.login-container {
+  background: white;
+  padding: 50px 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 450px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.login-container h1 {
+  text-align: center;
+  color: var(--primary-green);
+  margin-bottom: 8px;
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* gap: 4px; */
+}
+
+.login-container h2
+ {
+  text-align: center;
+  color: #757575;
+  margin-bottom: 35px;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.login-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form label {
+  margin-bottom: 8px;
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.login-form input {
+  padding: 14px 18px;
+  border: 2px solid #E0E0E0;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: #FAFAFA;
+  font-family: 'Poppins', sans-serif;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: var(--primary-green);
+  background: white;
+  box-shadow: 0 0 0 4px rgba(0, 105, 92, 0.1);
+}
+
+.error-message {
+  background: #FFEBEE;
+  color: #C62828;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border-left: 4px solid #F44336;
+  font-size: 14px;
+  margin: 0;
+  font-weight: 500;
+}
+
+.btn-login {
+  padding: 16px;
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-dark) 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 105, 92, 0.3);
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-login:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--primary-green-dark) 0%, #003D33 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 105, 92, 0.4);
+}
+
+.btn-login:disabled {
+  background: #BDBDBD;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Aide pour les tests */
+.login-container > div:last-child {
+  margin-top: 25px;
+  padding: 15px;
+  background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+  border-radius: 12px;
+  border: 2px solid var(--primary-green-light);
+  font-size: 13px;
+}
+
+.login-container > div:last-child p {
+  margin: 5px 0;
+}
+
+.login-container > div:last-child code {
+  background: white;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  color: var(--primary-green);
+  font-weight: 600;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .login-container {
+    padding: 40px 25px;
+  }
+
+  .login-container h1 {
+    font-size: 26px;
+  }
+
+  .login-container h2 {
+    font-size: 14px;
+  }
+}
+
+
+/* Wrapper pour le champ password avec icône */
+.password-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-input-wrapper input {
+  width: 100%;
+  padding-right: 50px; /* Espace pour le bouton */
+}
+
+/* Bouton toggle password */
+.password-toggle-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #757575;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+
+.password-toggle-btn:hover {
+  background: rgba(0, 105, 92, 0.1);
+  color: var(--primary-green);
+}
+
+.password-toggle-btn:focus {
+  outline: none;
+  background: rgba(0, 105, 92, 0.15);
+  color: var(--primary-green);
+}
+
+.password-toggle-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Animation au clic */
+.password-toggle-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* Responsive mobile */
+@media (max-width: 768px) {
+  .password-toggle-btn {
+    padding: 10px;
+  }
+  
+  .password-toggle-btn svg {
+    width: 22px;
+    height: 22px;
+  }
+}
