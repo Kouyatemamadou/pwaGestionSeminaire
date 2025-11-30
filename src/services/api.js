@@ -8,7 +8,7 @@ export const getImageUrl = (photoUrl) => {
   if (photoUrl.startsWith('http://') || photoUrl.startsWith('https://')) {
     try {
       const url = new URL(photoUrl);
-      return url.pathname;
+      return url;
     } catch {
       return photoUrl;
     }
